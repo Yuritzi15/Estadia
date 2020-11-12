@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start()  ?>
 <html>
 <head>
   <meta charset="utf-8">
@@ -16,37 +17,44 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-mini">
-<!-- Site wrapper -->
-<div class="wrapper">
-
-<!-- Nav -->
+<body class="hold-transition sidebar-mini sidebar-collapse ">
 
 <?php
-include 'vistas/modulos/cabecera.php';
+if (isset($_SESSION['login']) && $_SESSION['login'] == 'activa'){
+ echo '<div class="wrapper">';
+  //Cabecera
+  include 'modulos/cabecera.php';
+  //Cabecera
+
+  //Paginas
+  if(isset($_GET["enlace"])){
+    if($_GET["enlace"] == "inventario"){
+      include "modulos/".$_GET["enlace"].".php";
+    }
+  }
+  //Paginas
+
+  //Barra
+  include 'modulos/sidebar.php'; 
+  //Barra
+  include 'modulos/contenido.php';
+  //Pie
+  include 'modulos/pie.php';
+  //Pie
+
+  echo '</div>';}
+
+  else{
+    include 'vistas/modulos/login.php';
+  }
 ?>
-
-<?php 
-include 'vistas/modulos/contenido.php';
- ?>
-
-<?php
-include 'vistas/modulos/menu.php'; 
- ?>
-
- <?php 
- include 'vistas/modulos/pie.php';
-  ?>
-
-  
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
+
+
 
 <!-- jQuery -->
 <script src="vistas/plugins/jquery/jquery.min.js"></script>
