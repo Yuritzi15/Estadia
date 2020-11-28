@@ -2,12 +2,12 @@
 	class ControladorUsuario{
 		public function ctrlLoginUsuario(){
 
-		if(isset($_POST['txt_usu'])){
+		if(isset($_POST['txt_usu']) && isset($_POST['txt_pass'])){
 			if(preg_match('/^[a-zA-Z0-9]+$/',$_POST["txt_usu"]) && preg_match('/^[a-zA-Z0-9]+$/',$_POST["txt_pass"])){
 
 		    	$usuario = $_POST["txt_usu"];
-		    	$contra = $_POST["txt_pass"];
-		    	$result = ModeloUsuario::mdlBuscarUsuario($usuario);
+		    	$contrasena = $_POST["txt_pass"];
+		    	$result = ModeloUsuario::mdlBuscarUsuario($usuario,$contrasena);
 
 		    	if(isset ($result["Usuario"]) && $result["Usuario"] == $_POST['txt_usu'] && isset($result["Contrasena"]) && $result["Contrasena"] == $_POST['txt_pass']){
 

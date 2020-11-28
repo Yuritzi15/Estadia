@@ -17,28 +17,31 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="hold-transition sidebar-mini sidebar-collapse ">
+<body class="hold-transition sidebar-mini sidebar-collapse login-page">
 
 <?php
 if (isset($_SESSION['login']) && $_SESSION['login'] == 'activa'){
  echo '<div class="wrapper">';
-  //Cabecera
-  include 'modulos/cabecera.php';
-  //Cabecera
 
   //Paginas
   if(isset($_GET["enlace"])){
-    if($_GET["enlace"] == "inventario"){
+    if($_GET["enlace"] == "inventario" || $_GET["enlace"] == "cerrar" ){
       include "modulos/".$_GET["enlace"].".php";
     }
+  else{
+    include "modulos/404.php";
+    }
+  }
+  else{
+      //Barra
+  include 'modulos/contenido.php';
+  //Pie
   }
   //Paginas
 
   //Barra
   include 'modulos/sidebar.php'; 
-  //Barra
-  include 'modulos/contenido.php';
-  //Pie
+
   include 'modulos/pie.php';
   //Pie
 
