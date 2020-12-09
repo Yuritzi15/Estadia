@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Inventario</h1>
+            <h1>Editar al inventario</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -46,6 +46,11 @@
                     <td>X</td>
                     <td>X</td>
                     <td>X</td>
+                     <td>
+                      <div class="btn-btn-group">
+                        <button class="btn btn-warning" data-toggle="modal" data-target="#myModal"><i class="fas fa-pen-square"></i></button>
+                      </div>
+                    </td>
                   </tr>
                   <tr>
                     <td>Trident</td>
@@ -102,3 +107,30 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
+  <!-- /.content-wrapper -->
+
+  <!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style = "background: #ffc107">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Modal body..
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

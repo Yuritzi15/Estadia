@@ -1,4 +1,5 @@
-<div class="login-box">
+<body class="hold-transition login-page">
+  <div class="login-box">
   <div class="login-logo">
     <b>Concretos</b>
   </div>
@@ -51,3 +52,4 @@
     <!-- /.login-card-body -->
   </div>
 </div>
+</body>

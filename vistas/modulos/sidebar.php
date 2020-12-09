@@ -21,7 +21,7 @@
             <a href="#" class="nav-link">
              <i class="nav-icon fas fa-box"></i>
               <p>
-                Inventario
+                Inventario-Piezas
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -46,6 +46,14 @@
                 <a href="eliminar" class="nav-link">
                <i class=" nav-icon far fa-trash-alt"></i>
                   <p>Eliminar</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="editar" class="nav-link">
+               <i class=" nav-icon far fa-edit"></i>
+                  <p>Editar</p>
                 </a>
               </li>
             </ul>
