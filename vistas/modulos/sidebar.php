@@ -33,6 +33,22 @@
                 </a>
               </li>
             </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="agregar" class="nav-link">
+               <i class=" nav-icon far fa-plus-square"></i>
+                  <p>Agregar</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="eliminar" class="nav-link">
+               <i class=" nav-icon far fa-trash-alt"></i>
+                  <p>Eliminar</p>
+                </a>
+              </li>
+            </ul>
           </li>
          
          
