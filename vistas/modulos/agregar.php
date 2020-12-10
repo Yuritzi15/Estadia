@@ -51,49 +51,6 @@
                     <td>X</td>
                     <td>X</td>
                     <td>X</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.5
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5.5</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 6
-                    </td>
-                    <td>Win 98+</td>
-                    <td>6</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet Explorer 7</td>
-                    <td>Win XP SP2+</td>
-                    <td>7</td>
-                    <td>A</td>
-                  </tr>
-                
-                  <tr>
-                    <td>Other browsers</td>
-                    <td>All others</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>U</td>
-                  </tr>
                   </tbody>
               
                 </table>
@@ -111,7 +68,7 @@
 <div class="modal fade" id="myModal">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
-
+      <form role ="form" method="POST">
       <!-- Modal Header -->
       <div class="modal-header" style = "background: #17a2b8">
         <h4 class="modal-title">Agregar piezas</h4>
@@ -192,10 +149,14 @@
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-dismiss="modal">Guardar piezas</button>
+        <button type="submit" class="btn btn-success">Guardar piezas</button>
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar/Cancelar</button>
-
       </div>
+      <?php
+        $obj_guardar = new CtrlGuardarInv();
+        $obj_guardar -> Guardar(); 
+       ?>
+      </form>
     </div>
   </div>
 </div>
