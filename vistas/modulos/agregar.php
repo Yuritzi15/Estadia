@@ -41,16 +41,23 @@
                   </thead>
                   <tbody>
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
+         <?php
+                        $producto = CtrlGuardarInv::Mostrar();
+                        foreach ($producto as $key => $value) {
+                           echo '
+                              <tr>
+                    <td>'.$value["Id"].'</td>
+                    <td>'.$value["NombreP"].'</td>
+                    <td>'.$value["Cantidad"].'</td>
+                    <td>'.$value["PrecioC"].'</td>
+                    <td>'.$value["PrecioV"].'</td>
+                    <td>'.$value["Cate_id"].'</td>
+                    <td>'.$value["Media_id"].'</td>
+                    <td>'.$value["FechaCrea"].'</td>
+                  </tr>
+                           ';
+                         } 
+                     ?>
                   </tbody>
               
                 </table>

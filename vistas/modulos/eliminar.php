@@ -35,23 +35,29 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>
+                    <?php
+                        $producto = CtrlGuardarInv::Mostrar();
+                        foreach ($producto as $key => $value) {
+                           echo '
+                              <tr>
+                    <td>'.$value["Id"].'</td>
+                    <td>'.$value["NombreP"].'</td>
+                    <td>'.$value["Cantidad"].'</td>
+                    <td>'.$value["PrecioC"].'</td>
+                    <td>'.$value["PrecioV"].'</td>
+                    <td>'.$value["Cate_id"].'</td>
+                    <td>'.$value["Media_id"].'</td>
+                    <td>'.$value["FechaCrea"].'</td>
+                     <td>
                       <div class="btn-btn-group">
-                        <button class="btn btn-danger" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash"></i></button>
+                          <button class="btn btn-danger" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash"></i></button>
                       </div>
                     </td>
                   </tr>
+                           ';
+                         } 
+                     ?>
+
                   </tbody>
               
                 </table>

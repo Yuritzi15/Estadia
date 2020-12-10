@@ -35,60 +35,24 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
-                    <td>X</td>
+                    <?php
+                        $producto = CtrlGuardarInv::Mostrar();
+                        foreach ($producto as $key => $value) {
+                           echo '
+                              <tr>
+                    <td>'.$value["Id"].'</td>
+                    <td>'.$value["NombreP"].'</td>
+                    <td>'.$value["Cantidad"].'</td>
+                    <td>'.$value["PrecioC"].'</td>
+                    <td>'.$value["PrecioV"].'</td>
+                    <td>'.$value["Cate_id"].'</td>
+                    <td>'.$value["Media_id"].'</td>
+                    <td>'.$value["FechaCrea"].'</td>
+      
                   </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5</td>
-                    <td>C</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.5
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5.5</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 6
-                    </td>
-                    <td>Win 98+</td>
-                    <td>6</td>
-                    <td>A</td>
-                  </tr>
-                  <tr>
-                    <td>Trident</td>
-                    <td>Internet Explorer 7</td>
-                    <td>Win XP SP2+</td>
-                    <td>7</td>
-                    <td>A</td>
-                  </tr>
-                
-                  <tr>
-                    <td>Other browsers</td>
-                    <td>All others</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>U</td>
-                  </tr>
+                           ';
+                         } 
+                     ?>
                   </tbody>
               
                 </table>
