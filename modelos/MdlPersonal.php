@@ -22,6 +22,13 @@
 			$stm -> execute();
 			return $stm -> fetchAll();
 		}
+
+	public function mdlMostrarCMBP(){
+		$stm = conexion::conectar()->prepare("SELECT * FROM `puestos`");
+
+			$stm -> execute();
+			return $stm -> fetchAll();
+	}
  	
  } 
  ?>

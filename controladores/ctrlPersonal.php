@@ -43,6 +43,11 @@
 			$res = ModeloPersonal::mdlMostrar();
 			return $res;
 		}
+
+		static public function Cmb_puesto(){
+			$res = ModeloPersonal::mdlMostrarCMBP();
+			return $res;
+		}
 	}
 
  ?>

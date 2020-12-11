@@ -125,12 +125,12 @@
               <span class="input-group-text"><i class="fas fa-id-card-alt"></i></span>
             </div>
               <select class="form-control input-lg" name="cmb_Puesto">
-                <option value="" disabled selected>Elegir Puesto</option>
-                <option value="Apple">Apple</option>
-                <option value="Banana">Banana</option>
-                <option value="Coconut">Coconut</option>
-                <option value="Blueberry">Blueberry</option>
-                <option value="Strawberry">Strawberry</option>
+                 <?php
+                      $cmb = CtrlPersonal::Cmb_puesto();
+                        foreach ($cmb as $key => $value){
+                          echo '<option value = "'.$value["Id"].'"> '.$value["Puesto"].'</option>';
+                        }
+                 ?>
             </select>
           <!--Nombre de la pieza-->
           </div>
