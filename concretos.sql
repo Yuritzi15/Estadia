@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-12-2020 a las 11:43:28
+-- Tiempo de generación: 11-12-2020 a las 06:02:34
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -45,6 +45,32 @@ INSERT INTO `categoria` (`Id`, `Nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `personal`
+--
+
+CREATE TABLE `personal` (
+  `Id` int(35) NOT NULL,
+  `Nombre` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `ApePa` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `ApeMa` varchar(35) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `Contacto` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
+  `Puesto` int(5) DEFAULT NULL,
+  `FechaCreacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `Foto` int(5) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `personal`
+--
+
+INSERT INTO `personal` (`Id`, `Nombre`, `ApePa`, `ApeMa`, `Contacto`, `Puesto`, `FechaCreacion`, `Foto`) VALUES
+(1, 'Leonel', 'Leija', 'Perez', '8971026510', 1, '2020-12-11 02:57:54', NULL),
+(3, 'Alan', 'Hernandez', 'Salazar', '8971026511', NULL, '2020-12-11 04:17:55', NULL),
+(4, 'Yuri', 'Cañamar', 'Cañamar', '897201471', NULL, '2020-12-11 04:25:57', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `productos`
 --
 
@@ -54,8 +80,8 @@ CREATE TABLE `productos` (
   `Cantidad` int(20) NOT NULL,
   `PrecioC` decimal(25,2) NOT NULL,
   `PrecioV` decimal(25,2) NOT NULL,
-  `Cate_id` int(3) NOT NULL,
-  `Media_id` int(3) NOT NULL,
+  `Cate_id` int(3) DEFAULT NULL,
+  `Media_id` int(3) DEFAULT NULL,
   `FechaCrea` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -65,7 +91,30 @@ CREATE TABLE `productos` (
 
 INSERT INTO `productos` (`Id`, `NombreP`, `Cantidad`, `PrecioC`, `PrecioV`, `Cate_id`, `Media_id`, `FechaCrea`) VALUES
 (1, 'Llave inglesa', 15, '1500.00', '1600.00', 1, 1, '0000-00-00 00:00:00'),
-(2, 'Tuerca rusa', 15, '140.00', '160.00', 2, 1, '2020-12-09 10:02:00');
+(2, 'Tuerca rusa', 15, '140.00', '160.00', 2, 1, '2020-12-09 10:02:00'),
+(3, 'Ejemplo', 15, '15.00', '15.00', NULL, NULL, '2020-12-10 02:28:30'),
+(4, 'Ejemplo', 15, '15.00', '15.00', NULL, NULL, '2020-12-10 03:00:26'),
+(5, 'Tuercas', 150000, '50.00', '60.00', NULL, NULL, '2020-12-10 06:03:17'),
+(6, 'Tanque de gas', 2, '5000.00', '5500.00', NULL, NULL, '2020-12-10 06:05:00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `puestos`
+--
+
+CREATE TABLE `puestos` (
+  `Id` int(11) NOT NULL,
+  `Nombre` varchar(35) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `puestos`
+--
+
+INSERT INTO `puestos` (`Id`, `Nombre`) VALUES
+(1, 'Mecánico'),
+(2, 'Chofer');
 
 -- --------------------------------------------------------
 
@@ -99,9 +148,21 @@ ALTER TABLE `categoria`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indices de la tabla `personal`
+--
+ALTER TABLE `personal`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indices de la tabla `puestos`
+--
+ALTER TABLE `puestos`
   ADD PRIMARY KEY (`Id`);
 
 --
@@ -121,10 +182,22 @@ ALTER TABLE `categoria`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT de la tabla `personal`
+--
+ALTER TABLE `personal`
+  MODIFY `Id` int(35) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `puestos`
+--
+ALTER TABLE `puestos`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
