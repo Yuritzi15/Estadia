@@ -4,13 +4,13 @@
 
 		static public function Guardar(){
 
-			if (isset($_POST['txt_nombre']) || isset($_POST['txt_cantidadP']) || isset($_POST['txt_precioC']) || isset($_POST['txt_precioV'])){
+			if (isset($_POST['txt_nombre']) || isset($_POST['txt_cantidadP']) || isset($_POST['txt_precioC']) || isset($_POST['txt_precioV']) || isset($_POST['Cmb_cate'])){
 
 				if(preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ]+$/',$_POST['txt_nombre'] || preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ]+$/',$_POST['txt_cantidadP']))){
 
 					$tabla = "productos";
 					$data = array("NombreP" => $_POST["txt_nombre"], "Cantidad" => $_POST["txt_cantidadP"],"PrecioC" => $_POST["txt_precioC"],
-					"PrecioV" => $_POST["txt_precioV"]);
+					"PrecioV" => $_POST["txt_precioV"], "Cate_id" => $_POST['Cmb_cate']);
 
 					$res = ModeloGuardarP::mdlGuardar($tabla,$data);
 
@@ -56,6 +56,11 @@
   							})
 					</script>';
 			}
+		}
+
+		static public function Cmb_Cate(){
+			$res = ModeloGuardarP::mdlCmb_Cate();
+			return $res;
 		}
 	}
 

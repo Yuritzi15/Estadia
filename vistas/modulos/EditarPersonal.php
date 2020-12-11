@@ -50,7 +50,7 @@
                     <td>'.$value["Foto"].'</td>
                     <td>
                       <div class="btn-btn-group">
-                          <button class="btn btn-danger" data-toggle="modal" data-target="#myModal"><i class="fas fa-edit"></i></button>
+                          <button class="btn btn-warning" data-toggle="modal" data-target="#myModal"><i class="fas fa-edit"></i></button>
                       </div>
                     </td>
                   </tr>

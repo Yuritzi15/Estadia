@@ -45,7 +45,7 @@
                     <td>'.$value["Cantidad"].'</td>
                     <td>'.$value["PrecioC"].'</td>
                     <td>'.$value["PrecioV"].'</td>
-                    <td>'.$value["Cate_id"].'</td>
+                    <td>'.$value["TipoPieza"].'</td>
                     <td>'.$value["Media_id"].'</td>
                     <td>'.$value["FechaCrea"].'</td>
       

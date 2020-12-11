@@ -51,7 +51,7 @@
                     <td>'.$value["Cantidad"].'</td>
                     <td>'.$value["PrecioC"].'</td>
                     <td>'.$value["PrecioV"].'</td>
-                    <td>'.$value["Cate_id"].'</td>
+                    <td>'.$value["TipoPieza"].'</td>
                     <td>'.$value["Media_id"].'</td>
                     <td>'.$value["FechaCrea"].'</td>
                   </tr>
@@ -126,14 +126,14 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-book"></i></span>
             </div>
-              <select class="form-control input-lg" name="cmb_cate">
-                <option value="" disabled selected>Choose option</option>
-                <option value="Apple">Apple</option>
-                <option value="Banana">Banana</option>
-                <option value="Coconut">Coconut</option>
-                <option value="Blueberry">Blueberry</option>
-                <option value="Strawberry">Strawberry</option>
-            </select>
+              <select class="form-control input-lg" name="Cmb_cate">
+                 <?php
+                      $cmb = CtrlGuardarInv::Cmb_Cate();
+                        foreach ($cmb as $key => $value){
+                          echo '<option value = "'.$value["Id"].'"> '.$value["TipoPieza"].'</option>';
+                        }
+                 ?>
+              </select>
           <!--Nombre de la pieza-->
           </div>
           

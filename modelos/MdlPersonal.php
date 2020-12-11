@@ -17,7 +17,7 @@
 		}
 
  	public function mdlMostrar(){
-			$stm = conexion::conectar()->prepare("SELECT * FROM `personal`");
+			$stm = conexion::conectar()->prepare("SELECT personal.Id, personal.Nombre, personal.ApePa, personal.ApeMa, personal.Contacto, puestos.Puesto, personal.FechaCreacion,personal.Foto FROM `personal` INNER JOIN `puestos` ON (personal.`Puesto` = puestos.`Id`)");
 
 			$stm -> execute();
 			return $stm -> fetchAll();
