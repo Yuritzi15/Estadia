@@ -58,6 +58,48 @@
               </li>
             </ul>
           </li>
+
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Personal
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="VerPersonal" class="nav-link">
+                <i class="nav-icon fas fa-people-carry"></i>
+                  <p>Ver personal</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="GuardarPersonal" class="nav-link">
+                <i class="nav-icon fas fa-user-plus"></i>
+                  <p>Agregar personal</p>
+                </a>
+              </li>
+            </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="EliminarPersonal" class="nav-link">
+               <i class="nav-icon fas fa-user-minus"></i>
+                  <p>Eliminar Personal</p>
+                </a>
+              </li>
+            </ul>
+               <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="EditarPersonal" class="nav-link">
+              <i class="nav-icon fas fa-user-edit"></i>
+                  <p>Editar Personal</p>
+                </a>
+              </li>
+            </ul>
+          </li>
          
          
           <li class="nav-header">Sesiones</li>

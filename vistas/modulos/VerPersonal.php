@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Eliminar del inventario</h1>
+            <h1>Usuarios</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -26,38 +26,32 @@
                   <tr>
                     <th>#</th>
                     <th>Nombre</th>
-                    <th>Cantidad</th>
-                    <th>Precio de compra</th>
-                    <th>Precio de venta</th>
-                    <th>Categoria</th>
-                    <th>Imagen</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Contacto</th>
+                    <th>Puesto</th>
                     <th>Fecha de creación</th>
+                    <th>Foto</th>
                   </tr>
                   </thead>
                   <tbody>
                     <?php
-                        $producto = CtrlGuardarInv::Mostrar();
+                        $producto = CtrlPersonal::Mostrar();
                         foreach ($producto as $key => $value) {
                            echo '
                               <tr>
                     <td>'.$value["Id"].'</td>
-                    <td>'.$value["NombreP"].'</td>
-                    <td>'.$value["Cantidad"].'</td>
-                    <td>'.$value["PrecioC"].'</td>
-                    <td>'.$value["PrecioV"].'</td>
-                    <td>'.$value["Cate_id"].'</td>
-                    <td>'.$value["Media_id"].'</td>
-                    <td>'.$value["FechaCrea"].'</td>
-                     <td>
-                      <div class="btn-btn-group">
-                          <button class="btn btn-danger" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash"></i></button>
-                      </div>
-                    </td>
+                    <td>'.$value["Nombre"].'</td>
+                    <td>'.$value["ApePa"].'</td>
+                    <td>'.$value["ApeMa"].'</td>
+                    <td>'.$value["Contacto"].'</td>
+                    <td>'.$value["Puesto"].'</td>
+                    <td>'.$value["FechaCreacion"].'</td>
+                    <td>'.$value["Foto"].'</td>
                   </tr>
                            ';
                          } 
                      ?>
-
                   </tbody>
               
                 </table>
@@ -66,10 +60,8 @@
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
+
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-  <!-- -------------------------------------------------------------------------------------------------- -->
-<!-- The Modal -->

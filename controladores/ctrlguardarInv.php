@@ -45,6 +45,18 @@
 			$res = ModeloGuardarP::mdlMostrar();
 			return $res;
 		}
+
+		static public function Eliminar(){
+			if(isset($_POST['Id'])){
+				echo'<script>
+								Swal.fire({
+  								icon: "success",
+  								title: "Guardado exitoso!",
+  								showConfirmButton: true,
+  							})
+					</script>';
+			}
+		}
 	}
 
  ?>

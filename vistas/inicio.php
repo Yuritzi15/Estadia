@@ -29,7 +29,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == 'activa'){
 
   //Paginas
   if(isset($_GET["enlace"])){
-    if($_GET["enlace"] == "inventario" || $_GET["enlace"] == "cerrar" || $_GET["enlace"] == "agregar" || $_GET["enlace"] == "eliminar" || $_GET["enlace"] == "editar"){
+    if($_GET["enlace"] == "inventario" || $_GET["enlace"] == "cerrar" || $_GET["enlace"] == "agregar" || $_GET["enlace"] == "eliminar" || $_GET["enlace"] == "editar" || $_GET["enlace"] == "VerPersonal" || $_GET["enlace"] == "GuardarPersonal" || $_GET["enlace"] == "EliminarPersonal" || $_GET["enlace"] == "EditarPersonal"){
       include "modulos/".$_GET["enlace"].".php";
     }
   else{

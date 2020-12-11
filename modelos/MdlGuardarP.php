@@ -22,7 +22,8 @@ require_once("conexion.php");
 
 			$stm -> execute();
 			return $stm -> fetchAll();
-		}	
+		}
+
 	}
 
  ?>
