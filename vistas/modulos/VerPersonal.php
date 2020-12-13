@@ -31,7 +31,6 @@
                     <th>Contacto</th>
                     <th>Puesto</th>
                     <th>Fecha de creación</th>
-                    <th>Foto</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -47,7 +46,6 @@
                     <td>'.$value["Contacto"].'</td>
                     <td>'.$value["Puesto"].'</td>
                     <td>'.$value["FechaCreacion"].'</td>
-                    <td>'.$value["Foto"].'</td>
                   </tr>
                            ';
                          } 

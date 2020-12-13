@@ -31,7 +31,6 @@
                     <th>Contacto</th>
                     <th>Puesto</th>
                     <th>Fecha de creación</th>
-                    <th>Foto</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -48,11 +47,6 @@
                     <td>'.$value["Puesto"].'</td>
                     <td>'.$value["FechaCreacion"].'</td>
                     <td>'.$value["Foto"].'</td>
-                    <td>
-                      <div class="btn-btn-group">
-                          <button class="btn btn-warning" data-toggle="modal" data-target="#myModal"><i class="fas fa-edit"></i></button>
-                      </div>
-                    </td>
                   </tr>
                            ';
                          } 

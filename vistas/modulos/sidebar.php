@@ -18,7 +18,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-close">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link active">
              <i class="nav-icon fas fa-box"></i>
               <p>
                 Inventario-Piezas
@@ -60,7 +60,7 @@
           </li>
 
           <li class="nav-item has-treeview menu-close">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 Personal

@@ -20,6 +20,10 @@
 
       <!-- Default box -->
       <div class="card">
+            <div class="card-header">
+          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                  Eliminar personal
+                </button>
         <div class="card-body">
            <table id="example1" class="table table-bordered table-striped">
                   <thead>
@@ -31,7 +35,6 @@
                     <th>Contacto</th>
                     <th>Puesto</th>
                     <th>Fecha de creación</th>
-                    <th>Foto</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -47,12 +50,6 @@
                     <td>'.$value["Contacto"].'</td>
                     <td>'.$value["Puesto"].'</td>
                     <td>'.$value["FechaCreacion"].'</td>
-                    <td>'.$value["Foto"].'</td>
-                    <td>
-                      <div class="btn-btn-group">
-                          <button class="btn btn-danger" data-toggle="modal" data-target="#myModal"><i class="fas fa-trash"></i></button>
-                      </div>
-                    </td>
                   </tr>
                            ';
                          } 
@@ -70,3 +67,39 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  <!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content modal-sm">
+      <form role ="form" method="POST">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style = "background: #dc3545">
+        <h4 class="modal-title">Confirmación</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-archive"></i></span>
+            </div>
+            <input type="text" name="txt_id" class="form-control" placeholder="Número de registro">
+          </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar/cerrar</button>
+      </div>
+       <?php
+        $obj_guardar = new CtrlPersonal();
+        $obj_guardar -> Eliminar(); 
+       ?>
+      </form>
+
+    </div>
+  </div>
+</div>

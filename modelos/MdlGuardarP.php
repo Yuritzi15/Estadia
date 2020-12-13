@@ -19,7 +19,7 @@ require_once("conexion.php");
 		}
 
 		public function mdlMostrar(){
-			$stm = conexion::conectar()->prepare("SELECT p.Id, p.NombreP, p.Cantidad, p.PrecioC, p.PrecioV, c.TipoPieza,p.Media_id, p.FechaCrea FROM productos p INNER JOIN categoria c ON (p.Cate_id = c.Id)");
+			$stm = conexion::conectar()->prepare("SELECT p.Id, p.NombreP, p.Cantidad, p.PrecioC, p.PrecioV, c.TipoPieza, p.FechaCrea FROM productos p INNER JOIN categoria c ON (p.Cate_id = c.Id)");
 
 			$stm -> execute();
 			return $stm -> fetchAll();
@@ -31,6 +31,17 @@ require_once("conexion.php");
 			return $stm -> fetchAll();
 		}
 
+		public function mdlEliminar($tabla,$data){
+			$stm = conexion::conectar()->prepare("DELETE FROM `productos` WHERE `productos`.`Id` = :Id");
+			$stm -> bindParam(":Id", $data["Id"], PDO::PARAM_STR);
+
+			if ($stm -> execute()) {
+				return "active";
+			}else{
+				return "error";
+			}
+		}
 	}
 
  ?>
+

@@ -35,7 +35,6 @@
                     <th>Precio de compra</th>
                     <th>Precio de venta</th>
                     <th>Categoria</th>
-                    <th>Imagen</th>
                     <th>Fecha de creación</th>
                   </tr>
                   </thead>
@@ -52,7 +51,6 @@
                     <td>'.$value["PrecioC"].'</td>
                     <td>'.$value["PrecioV"].'</td>
                     <td>'.$value["TipoPieza"].'</td>
-                    <td>'.$value["Media_id"].'</td>
                     <td>'.$value["FechaCrea"].'</td>
                   </tr>
                            ';
@@ -137,20 +135,7 @@
           <!--Nombre de la pieza-->
           </div>
           
-           <!--Cantidad de piezas-->
-              <div class="input-group mb-3">
-             <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-image"></i></span>
-            </div>
-             <select class="form-control input-lg"  name="cmb_imagen">
-        <option value="" disabled selected>Choose option</option>
-        <option value="Apple">Apple</option>
-        <option value="Banana">Banana</option>
-        <option value="Coconut">Coconut</option>
-        <option value="Blueberry">Blueberry</option>
-        <option value="Strawberry">Strawberry</option>
-    </select>
-              </div>
+          
           <!--Cantidad de piezas-->
         </div>
       </div>

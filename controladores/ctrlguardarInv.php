@@ -47,14 +47,49 @@
 		}
 
 		static public function Eliminar(){
-			if(isset($_POST['Id'])){
-				echo'<script>
+			if(isset($_POST['txt_id'])){
+				if(preg_match('/^[1-9][0-9]*$/',$_POST['txt_id'])){
+
+					$tabla = "productos";
+					$data = array("Id" => $_POST["txt_id"]);
+					$res = ModeloGuardarP::mdlEliminar($tabla,$data);
+					if($res = "active"){
+						echo'<script>
 								Swal.fire({
   								icon: "success",
-  								title: "Guardado exitoso!",
+  								title: "Se ha eliminado el registro exitosamente!",
   								showConfirmButton: true,
-  							})
-					</script>';
+  								}).then(function(result){
+								if (result.value){
+									window.location = "inventario"
+								}
+							})
+							</script>';
+
+					}else{
+						echo'<script>
+								Swal.fire({
+  								icon: "error",
+  								title: "Error al aliminar el registro!",
+  								showConfirmButton: true,
+  								})
+							</script>';
+					}
+				}else{
+					echo'<script>
+					swal.fire({
+								icon: "error",
+								title: "Solo se permite números o hay datos vacíos!",
+								showConfirmButton: true,
+								confirmButtonText: "Cerrar"
+
+							}).then(function(result){
+								if (result.value){
+									window.location = "eliminar"
+								}
+							})
+							</script>';
+				}
 			}
 		}
 
