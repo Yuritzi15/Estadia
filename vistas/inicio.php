@@ -29,7 +29,7 @@ if (isset($_SESSION['login']) && $_SESSION['login'] == 'activa'){
 
   //Paginas
   if(isset($_GET["enlace"])){
-    if($_GET["enlace"] == "inventario" || $_GET["enlace"] == "cerrar" || $_GET["enlace"] == "agregar" || $_GET["enlace"] == "eliminar" || $_GET["enlace"] == "editar" || $_GET["enlace"] == "VerPersonal" || $_GET["enlace"] == "GuardarPersonal" || $_GET["enlace"] == "EliminarPersonal" || $_GET["enlace"] == "EditarPersonal"){
+    if($_GET["enlace"] == "inventario" || $_GET["enlace"] == "cerrar" || $_GET["enlace"] == "agregar" || $_GET["enlace"] == "eliminar" || $_GET["enlace"] == "editar" || $_GET["enlace"] == "VerPersonal" || $_GET["enlace"] == "GuardarPersonal" || $_GET["enlace"] == "EliminarPersonal" || $_GET["enlace"] == "EditarPersonal" || $_GET["enlace"] == "adcatP" || $_GET["enlace"] == "elcatP" || $_GET["enlace"] == "adcatCPU" || $_GET["enlace"] == "elcatCPU"){
       include "modulos/".$_GET["enlace"].".php";
     }
   else{

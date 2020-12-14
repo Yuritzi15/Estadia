@@ -100,8 +100,49 @@
               </li>
             </ul>
           </li>
-         
-         
+
+         <li class="nav-header">Categorías</li>
+          <li class="nav-item has-treeview menu-close">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-book"></i> 
+              <p>
+                Opciones
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="adcatP" class="nav-link">
+                  <i class="nav-icon fas fa-balance-scale"></i> 
+                  <p>Añadir categoría producto</p>
+                </a>
+              </li>
+            </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="elcatP" class="nav-link">
+                  <i class="nav-icon fas fa-balance-scale"></i> 
+                  <p>Borrar categoría producto</p>
+                </a>
+              </li>
+            </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="adcatCPU" class="nav-link">
+                  <i class="nav-icon fas fa-id-card-alt"></i> 
+                  <p>Añadir categoría puesto</p>
+                </a>
+              </li>
+            </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="elcatCPU" class="nav-link">
+                  <i class="nav-icon fas fa-id-card-alt"></i> 
+                  <p>Borrar categoría puesto</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-header">Sesiones</li>
           <li class="nav-item has-treeview menu-close">
             <a href="#" class="nav-link active">

@@ -41,6 +41,35 @@ require_once("conexion.php");
 				return "error";
 			}
 		}
+
+		public function mdlMostrarCP(){
+			$stm = conexion::conectar()->prepare("SELECT * FROM `categoria`");
+
+			$stm -> execute();
+			return $stm -> fetchAll();
+		}
+
+		public function mdlEliminarCP($tabla,$data){
+			$stm = conexion::conectar()->prepare("DELETE FROM `categoria` WHERE `categoria`.`Id` = :Id");
+			$stm -> bindParam(":Id", $data["Id"], PDO::PARAM_STR);
+
+			if ($stm -> execute()) {
+				return "active";
+			}else{
+				return "error";
+			}
+		}
+
+		public function mdlGuardarCP($tabla,$data){
+			$stn = conexion::conectar() -> prepare("INSERT INTO `categoria` (`TipoPieza`) VALUES (:TipoPieza)");
+			$stn -> bindParam(":TipoPieza", $data["TipoPieza"], PDO::PARAM_STR);
+			if ($stn -> execute()){
+				return "active";
+			}else{
+				return "error";
+			}
+		}
+
 	}
 
  ?>

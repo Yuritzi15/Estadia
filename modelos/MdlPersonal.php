@@ -41,5 +41,33 @@
 				return "error";
 			}
 		}
+
+	public function mdlMostrarCPU(){
+		$stm = conexion::conectar()->prepare("SELECT * FROM `puestos`");
+
+			$stm -> execute();
+			return $stm -> fetchAll();
+	}
+	public function mdlGuardarCPU($tabla,$data){
+			$stn = conexion::conectar() -> prepare("INSERT INTO `puestos` (`Puesto`) VALUES (:Puesto);");
+			$stn -> bindParam(":Puesto", $data["Puesto"], PDO::PARAM_STR);
+			if ($stn -> execute()){
+				return "active";
+			}else{
+				return "error";
+			}
+		}
+
+	public function mdlEliminarCPU($tabla,$data){
+			$stm = conexion::conectar()->prepare("DELETE FROM `puestos` WHERE `puestos`.`Id` = :Id");
+			$stm -> bindParam(":Id", $data["Id"], PDO::PARAM_STR);
+
+			if ($stm -> execute()) {
+				return "active";
+			}else{
+				return "error";
+			}
+		}
+
  } 
  ?>
