@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-12-2020 a las 13:20:32
+-- Tiempo de generación: 14-12-2020 a las 02:28:17
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -39,8 +39,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`Id`, `TipoPieza`) VALUES
-(1, 'Refaccion'),
-(2, 'Especial');
+(2, 'Especial'),
+(3, 'Repuesto'),
+(4, 'SubEspecie');
 
 -- --------------------------------------------------------
 
@@ -78,7 +79,7 @@ CREATE TABLE `personal` (
   `ApePa` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
   `ApeMa` varchar(35) COLLATE utf8_spanish_ci DEFAULT NULL,
   `Contacto` varchar(35) COLLATE utf8_spanish_ci NOT NULL,
-  `Puesto` int(5) DEFAULT NULL,
+  `puesto_id` int(5) DEFAULT NULL,
   `FechaCreacion` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Foto` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
@@ -87,10 +88,8 @@ CREATE TABLE `personal` (
 -- Volcado de datos para la tabla `personal`
 --
 
-INSERT INTO `personal` (`Id`, `Nombre`, `ApePa`, `ApeMa`, `Contacto`, `Puesto`, `FechaCreacion`, `Foto`) VALUES
-(1, 'Leonel', 'Leija', 'Perez', '8971026510', 1, '2020-12-11 02:57:54', NULL),
-(3, 'Alan', 'Hernandez', 'Salazar', '8971026511', NULL, '2020-12-11 04:17:55', NULL),
-(4, 'Yuri', 'Cañamar', 'Cañamar', '897201471', NULL, '2020-12-11 04:25:57', NULL);
+INSERT INTO `personal` (`Id`, `Nombre`, `ApePa`, `ApeMa`, `Contacto`, `puesto_id`, `FechaCreacion`, `Foto`) VALUES
+(1, 'Leone', 'Leij', 'Pere', '897102651', 2, '2020-12-12 23:42:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -114,11 +113,8 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`Id`, `NombreP`, `Cantidad`, `PrecioC`, `PrecioV`, `Cate_id`, `Media_id`, `FechaCrea`) VALUES
-(1, 'Llave inglesa', 15, '1500.00', '1600.00', 1, 1, '0000-00-00 00:00:00'),
-(2, 'Tuerca union', 15, '140.00', '160.00', 2, 2, '2020-12-11 10:09:58'),
-(5, 'Tuerca Cople', 150000, '50.00', '60.00', 2, 3, '2020-12-11 10:09:36'),
-(6, 'Tanque de gas', 2, '5000.00', '5500.00', 1, 4, '2020-12-11 10:10:05'),
-(9, 'Focos', 123, '15.00', '60.00', 2, NULL, '2020-12-11 12:16:14');
+(1, 'Llave inglesa', 5, '1500.00', '1600.00', 1, NULL, '2020-12-13 10:29:02'),
+(2, 'Tuerca union', 5, '1500.00', '1600.00', 2, NULL, '2020-12-13 10:29:17');
 
 -- --------------------------------------------------------
 
@@ -137,7 +133,8 @@ CREATE TABLE `puestos` (
 
 INSERT INTO `puestos` (`Id`, `Puesto`) VALUES
 (1, 'Mecánico'),
-(2, 'Chofer');
+(2, 'Chofer'),
+(3, 'Contador');
 
 -- --------------------------------------------------------
 
@@ -208,7 +205,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `imagenref`
@@ -220,7 +217,7 @@ ALTER TABLE `imagenref`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `Id` int(35) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(35) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
@@ -232,7 +229,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `puestos`
 --
 ALTER TABLE `puestos`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
