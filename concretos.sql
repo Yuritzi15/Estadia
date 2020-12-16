@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-12-2020 a las 02:28:17
+-- Tiempo de generación: 16-12-2020 a las 06:31:55
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -39,9 +39,9 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`Id`, `TipoPieza`) VALUES
-(2, 'Especial'),
 (3, 'Repuesto'),
-(4, 'SubEspecie');
+(4, 'SubEspecie'),
+(7, 'Dañas');
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ CREATE TABLE `personal` (
 --
 
 INSERT INTO `personal` (`Id`, `Nombre`, `ApePa`, `ApeMa`, `Contacto`, `puesto_id`, `FechaCreacion`, `Foto`) VALUES
-(1, 'Leone', 'Leij', 'Pere', '897102651', 2, '2020-12-12 23:42:23', NULL);
+(6, 'Yuri', 'Cañamar', 'Cañamar', '89810245', 2, '2020-12-16 03:19:27', NULL);
 
 -- --------------------------------------------------------
 
@@ -104,7 +104,7 @@ CREATE TABLE `productos` (
   `PrecioC` decimal(25,2) NOT NULL,
   `PrecioV` decimal(25,2) NOT NULL,
   `Cate_id` int(3) DEFAULT NULL,
-  `Media_id` int(3) DEFAULT NULL,
+  `Proveedor_id` int(3) NOT NULL,
   `FechaCrea` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -112,9 +112,29 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`Id`, `NombreP`, `Cantidad`, `PrecioC`, `PrecioV`, `Cate_id`, `Media_id`, `FechaCrea`) VALUES
-(1, 'Llave inglesa', 5, '1500.00', '1600.00', 1, NULL, '2020-12-13 10:29:02'),
-(2, 'Tuerca union', 5, '1500.00', '1600.00', 2, NULL, '2020-12-13 10:29:17');
+INSERT INTO `productos` (`Id`, `NombreP`, `Cantidad`, `PrecioC`, `PrecioV`, `Cate_id`, `Proveedor_id`, `FechaCrea`) VALUES
+(2, 'Llave inglesa', 5, '1500.00', '1600.00', 3, 1, '2020-12-16 05:07:59'),
+(13, 'Focos', 15, '50.00', '60.00', 7, 2, '2020-12-16 04:59:04'),
+(16, 'Faros', 15, '15.00', '5500.00', 4, 2, '2020-12-16 05:30:43');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedor`
+--
+
+CREATE TABLE `proveedor` (
+  `Id` int(11) NOT NULL,
+  `Proveedor` varchar(30) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`Id`, `Proveedor`) VALUES
+(1, 'Autozone'),
+(2, 'China');
 
 -- --------------------------------------------------------
 
@@ -186,6 +206,12 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indices de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indices de la tabla `puestos`
 --
 ALTER TABLE `puestos`
@@ -205,7 +231,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `imagenref`
@@ -217,13 +243,19 @@ ALTER TABLE `imagenref`
 -- AUTO_INCREMENT de la tabla `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `Id` int(35) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(35) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `Id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `puestos`

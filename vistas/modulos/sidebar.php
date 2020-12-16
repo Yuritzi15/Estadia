@@ -142,6 +142,22 @@
                 </a>
               </li>
             </ul>
+              <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="adcatPr" class="nav-link">
+                  <i class="nav-icon far fa-id-card"></i> 
+                  <p>Agregar proveedores</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="elcatPr" class="nav-link">
+                  <i class="nav-icon far fa-id-card"></i> 
+                  <p>Eliminar proveedores</p>
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="nav-header">Sesiones</li>
           <li class="nav-item has-treeview menu-close">

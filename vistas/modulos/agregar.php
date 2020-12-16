@@ -35,6 +35,7 @@
                     <th>Precio de compra</th>
                     <th>Precio de venta</th>
                     <th>Categoria</th>
+                    <th>Proveedor</th>
                     <th>Fecha de creación</th>
                   </tr>
                   </thead>
@@ -51,6 +52,7 @@
                     <td>'.$value["PrecioC"].'</td>
                     <td>'.$value["PrecioV"].'</td>
                     <td>'.$value["TipoPieza"].'</td>
+                    <td>'.$value["Proveedor"].'</td>
                     <td>'.$value["FechaCrea"].'</td>
                   </tr>
                            ';
@@ -120,6 +122,7 @@
           <!--Precio de comprea-->
           </div>
 
+          <!-- Combobox categoria -->
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-book"></i></span>
@@ -132,10 +135,25 @@
                         }
                  ?>
               </select>
-          <!--Nombre de la pieza-->
           </div>
-          
-          
+          <!--Combobox categoria-->
+
+          <!--Combobox proveedor-->
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="far fa-id-card"></i></span>
+            </div>
+              <select class="form-control input-lg" name="Cmb_Pr">
+                 <?php
+                      $cmb = CtrlGuardarInv::Cmb_Pr();
+                        foreach ($cmb as $key => $value){
+                          echo '<option value = "'.$value["Id"].'"> '.$value["Proveedor"].'</option>';
+                        }
+                 ?>
+              </select>
+          </div>
+          <!--Combobox proveedor-->
+
           <!--Cantidad de piezas-->
         </div>
       </div>

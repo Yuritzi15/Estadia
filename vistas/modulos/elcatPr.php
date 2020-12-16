@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Eliminar del inventario</h1>
+            <h1>Eliminar proveedores</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -20,9 +20,9 @@
 
       <!-- Default box -->
       <div class="card">
-          <div class="card-header">
+        <div class="card-header">
           <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-                  Eliminar Registro
+                  Eliminar proveedor
                 </button>
         </div>
         <div class="card-body">
@@ -30,34 +30,22 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Nombre</th>
-                    <th>Cantidad</th>
-                    <th>Precio de compra</th>
-                    <th>Precio de venta</th>
-                    <th>Categoria</th>
                     <th>Proveedor</th>
-                    <th>Fecha de creación</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <?php
-                        $producto = CtrlGuardarInv::Mostrar();
+                  <tr>
+         <?php
+                        $producto = CtrlGuardarInv::Cmb_Pr();
                         foreach ($producto as $key => $value) {
-                          $Id = $value["Id"];
                            echo '
                               <tr>
                     <td>'.$value["Id"].'</td>
-                    <td>'.$value["NombreP"].'</td>
-                    <td>'.$value["Cantidad"].'</td>
-                    <td>'.$value["PrecioC"].'</td>
-                    <td>'.$value["PrecioV"].'</td>
-                    <td>'.$value["TipoPieza"].'</td>
                     <td>'.$value["Proveedor"].'</td>
-                    <td>'.$value["FechaCrea"].'</td>
-                  </tr>';
+                  </tr>
+                           ';
                          } 
                      ?>
-
                   </tbody>
               
                 </table>
@@ -66,45 +54,52 @@
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
+
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-
-  <!-- -------------------------------------------------------------------------------------------------- -->
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content modal-sm">
+  <!--------------------------------------------------------------------------------------->
+  
+  <!--Modal agregar -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
       <form role ="form" method="POST">
-
       <!-- Modal Header -->
       <div class="modal-header" style = "background: #dc3545">
-        <h4 class="modal-title">Confirmación</h4>
+        <h4 class="modal-title">Eliminar proveedor</h4>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 
       <!-- Modal body -->
-      <div class="modal-body">
-        <div class="input-group mb-3">
+      <div class="modal-body ">
+        <div class="box-body">
+
+          <!--Grupo 1-->
+          <!--Nombre de la pieza-->
+          <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text"><i class="fas fa-archive"></i></span>
+              <span class="input-group-text"><i class="fas fa-tools"></i></span>
             </div>
             <input type="text" name="txt_id" class="form-control" placeholder="Número de registro">
+          <!--Nombre de la pieza-->
+          <!--Cantidad de piezas-->
           </div>
+          <!--Cantidad de piezas-->
+        </div>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="submit" class="btn btn-danger">Confirmar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar/cerrar</button>
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar/Cancelar</button>
       </div>
-       <?php
+      <?php
         $obj_guardar = new CtrlGuardarInv();
-        $obj_guardar -> Eliminar(); 
+        $obj_guardar -> EliminarPr(); 
        ?>
       </form>
-
     </div>
   </div>
 </div>
+<!-------------------------------------------------------------------------------------------->

@@ -30,6 +30,7 @@
                     <th>Precio de compra</th>
                     <th>Precio de venta</th>
                     <th>Categoria</th>
+                    <th>Proveedor</th>
                     <th>Fecha de creación</th>
                   </tr>
                   </thead>
@@ -45,6 +46,7 @@
                     <td>'.$value["PrecioC"].'</td>
                     <td>'.$value["PrecioV"].'</td>
                     <td>'.$value["TipoPieza"].'</td>
+                    <td>'.$value["Proveedor"].'</td>
                     <td>'.$value["FechaCrea"].'</td>
                   </tr>
                            ';
