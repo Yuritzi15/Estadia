@@ -70,6 +70,13 @@ require_once("conexion.php");
 			}
 		}
 
+		public function mdlEditarP($data){
+			$stm = conexion::conectar()->prepare("SELECT * FROM `productos` WHERE `productos`.`Id` = :Id");
+			$stm -> bindParam(":Id", $data, PDO::PARAM_STR);
+			$stm -> execute();
+			return $stm;
+		}
+
 	}
 
  ?>

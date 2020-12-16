@@ -98,10 +98,13 @@
         <button type="submit" class="btn btn-warning">Confirmar</button>
         <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
       </div>
-         <?php
-          $obj_guardar = new CtrlGuardarInv(); 
-       ?>
+  <?php
+    $a = new CtrlGuardarInv();
+    $a -> EditarP();
+   ?>
       </form>
     </div>
   </div>
 </div>
+
+

@@ -30,9 +30,6 @@
         <div class="card-body">
           Inventario de la compañia Concretos Miguel Alemán!
         </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-        </div>
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->

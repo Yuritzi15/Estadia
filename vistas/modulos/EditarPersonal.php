@@ -20,6 +20,11 @@
 
       <!-- Default box -->
       <div class="card">
+         <div class="card-header">
+          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">
+                  Editar empledo
+          </button>
+        </div>
         <div class="card-body">
            <table id="example1" class="table table-bordered table-striped">
                   <thead>
@@ -46,7 +51,6 @@
                     <td>'.$value["Contacto"].'</td>
                     <td>'.$value["Puesto"].'</td>
                     <td>'.$value["FechaCreacion"].'</td>
-                    <td>'.$value["Foto"].'</td>
                   </tr>
                            ';
                          } 
@@ -64,3 +68,38 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  <div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form role ="form" method="POST">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style = "background: #ffc107">
+        <h4 class="modal-title">Editar empleado</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Seleccionar registro a editar:
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-tools"></i></span>
+            </div>
+            <input type="text" name="txt_id" class="form-control" placeholder="Número de registro">
+          </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-warning">Confirmar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+      </div>
+  <?php
+
+   ?>
+      </form>
+    </div>
+  </div>
+</div>
+

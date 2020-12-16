@@ -43,6 +43,7 @@
 
 		static public function Mostrar(){
 			$res = ModeloGuardarP::mdlMostrar();
+
 			return $res;
 		}
 
@@ -178,6 +179,32 @@
 							}).then(function(result){
 								if (result.value){
 									window.location = "elcatP"
+								}
+							})
+							</script>';
+				}
+			}
+		}
+
+		static public function EditarP(){
+			if(isset($_POST['txt_id'])){
+				if(preg_match('/^[1-9][0-9]*$/',$_POST['txt_id'])){
+				$data = $_POST["txt_id"];
+				$res = ModeloGuardarP::mdlEditarP($data);				
+				return $res;
+
+
+				}else{
+					echo'<script>
+					swal.fire({
+								icon: "error",
+								title: "Solo se permite números o hay datos vacíos!",
+								showConfirmButton: true,
+								confirmButtonText: "Cerrar"
+
+							}).then(function(result){
+								if (result.value){
+									window.location = "editar"
 								}
 							})
 							</script>';
