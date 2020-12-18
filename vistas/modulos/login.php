@@ -1,6 +1,12 @@
 <body class="hold-transition login-page">
   <div class="login-box">
   <div class="login-logo">
+    
+    <img  style="border-radius: 20px;"  class="register-logo"  height="85%" width = "85%" src="Img/Logo.jpg">
+
+    
+
+
     <b>Concretos</b>
   </div>
   <!-- /.login-logo -->
@@ -40,14 +46,11 @@
           $obj_login = new ControladorUsuario();
           $obj_login -> ctrlLoginUsuario();
         ?>
-
+      <p class="login-box-msg"> Para crear un usuario ponganse en contacto con el Administrador</p>
       </form>
-      <p class="mb-1">
-        <a href="forgot-password.html">Olvide mi usuario</a>
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Olvide mi contraseña</a>
-      </p>
+     
+      
+      
     </div>
     <!-- /.login-card-body -->
   </div>

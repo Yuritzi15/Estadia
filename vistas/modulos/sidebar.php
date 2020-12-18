@@ -2,7 +2,7 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index.php" class="brand-link">
-      <img src="vistas/dist/img/Tractor.png"
+      <img src="vistas/dist/img/Logo.jpg"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
@@ -25,6 +25,14 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="utilizadas" class="nav-link">
+                <i class="nav-icon far fa-eye"></i>
+                  <p>Registro usado</p>
+                </a>
+              </li>
+            </ul>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="inventario" class="nav-link">

@@ -13,11 +13,11 @@
 
 		    		$_SESSION['login'] = 'activa';
 		    		echo '<script>
-		    			window.location= "inicio";
+		    			window.location= "inicio1";
 		    		  </script> ';
 		    	}
 		    	else{
-		    		echo '<div class="alert alert-danger">Error en el Acceso</div>';
+		    		echo '<div class="alert alert-danger" >Error en el Acceso</div>';
 		    	}
 			}
 		}
