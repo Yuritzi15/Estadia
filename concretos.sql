@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-12-2020 a las 06:31:55
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.2.34
+-- Tiempo de generación: 18-12-2020 a las 07:00:57
+-- Versión del servidor: 10.4.16-MariaDB
+-- Versión de PHP: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `concretos`
 --
-CREATE DATABASE IF NOT EXISTS `concretos` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `concretos`;
 
 -- --------------------------------------------------------
 
@@ -90,6 +88,28 @@ CREATE TABLE `personal` (
 
 INSERT INTO `personal` (`Id`, `Nombre`, `ApePa`, `ApeMa`, `Contacto`, `puesto_id`, `FechaCreacion`, `Foto`) VALUES
 (6, 'Yuri', 'Cañamar', 'Cañamar', '89810245', 2, '2020-12-16 03:19:27', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `piezasutilizadas`
+--
+
+CREATE TABLE `piezasutilizadas` (
+  `id` int(11) NOT NULL,
+  `id_prod` int(100) NOT NULL,
+  `id_empleado` int(35) NOT NULL,
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `descripcion` text NOT NULL,
+  `cantidad` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `piezasutilizadas`
+--
+
+INSERT INTO `piezasutilizadas` (`id`, `id_prod`, `id_empleado`, `fecha`, `descripcion`, `cantidad`) VALUES
+(1, 13, 6, '2020-12-16 05:07:59', 'Se uso en camion 110	', 1);
 
 -- --------------------------------------------------------
 
@@ -200,10 +220,18 @@ ALTER TABLE `personal`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Indices de la tabla `piezasutilizadas`
+--
+ALTER TABLE `piezasutilizadas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `cat` (`Cate_id`),
+  ADD KEY `prov` (`Proveedor_id`);
 
 --
 -- Indices de la tabla `proveedor`
@@ -246,6 +274,12 @@ ALTER TABLE `personal`
   MODIFY `Id` int(35) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT de la tabla `piezasutilizadas`
+--
+ALTER TABLE `piezasutilizadas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -268,6 +302,17 @@ ALTER TABLE `puestos`
 --
 ALTER TABLE `usuarios`
   MODIFY `IdUsuario` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `cat` FOREIGN KEY (`Cate_id`) REFERENCES `categoria` (`Id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `prov` FOREIGN KEY (`Proveedor_id`) REFERENCES `proveedor` (`Id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
